@@ -163,3 +163,25 @@ The custom autoloader (`Auto_loader_Main.php`) automatically loads classes based
 
 - Classes in `LibrarySystem\Exceptions` – loaded from `src/Exception.php`.
 - All other `LibrarySystem` classes – loaded from `src/{ClassName}.php`.
+
+---
+
+## 🎯 Educational Concepts Covered
+
+This project demonstrates practical implementation of **Object-Oriented Programming (OOP)** concepts in PHP:
+
+| Concept | Implementation | Example in Code |
+| :--- | :--- | :--- |
+| **Classes & Objects** | All business logic is encapsulated in classes. | `Book`, `Customer`, `Library` |
+| **Constructor** | Used to initialize object properties. | `__construct()` in `Book`, `Customer` |
+| **Encapsulation** | All properties are `private` with public getters/setters. | `private $id`, `getId()`, `setId()` in `Book` |
+| **Inheritance** | Storage classes inherit from a base abstract class. | `LibraryStorage` and `CustomerStorage` extend `JsonStorage` |
+| **Abstract Class** | Defines a template for storage operations. | `JsonStorage` with abstract `getFilePath()` |
+| **Interface** | Ensures classes implement required methods. | `JsonSerializable` for custom JSON serialization |
+| **Trait** | Reusable code across multiple classes. | `Log` trait used in `Book`, `Library`, `Customer` |
+| **Namespaces** | Organizes code and prevents naming conflicts. | `LibrarySystem`, `LibrarySystem\Exceptions` |
+| **Custom Exceptions** | Specific error handling for different scenarios. | `BookNotFoundException`, `BookAlreadyGivenException`, etc. |
+| **Autoloading** | Automatically loads classes without manual `require`. | Custom PSR-4-like autoloader in `Auto_loader_Main.php` |
+| **File-based Storage** | Persists data using JSON files instead of a database. | `JsonStorage` with `saveData()` and `loadData()` |
+| **Logging** | Tracks all system actions for debugging and auditing. | `Log` trait with `Add_log()` method |
+| **Error Handling** | Try-catch blocks for graceful error management. | `try-catch` in `Main.php` for borrow/return operations |
